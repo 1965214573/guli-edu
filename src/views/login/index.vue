@@ -3,7 +3,7 @@
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
 
       <div class="title-container">
-        <h3 class="title">Login Form</h3>
+        <h3 class="title">谷粒学苑后台登陆页面</h3>
       </div>
 
       <el-form-item prop="username">
@@ -37,11 +37,13 @@
           @keyup.enter.native="handleLogin"
         />
         <span class="show-pwd" @click="showPwd">
-          <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
+          <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'"/>
         </span>
       </el-form-item>
 
-      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">Login</el-button>
+      <el-button :loading="loading" style="width:100%;margin-bottom:30px;" type="primary"
+                 @click.native.prevent="handleLogin">登陆
+      </el-button>
 
       <div class="tips">
         <span style="margin-right:20px;">username: admin</span>
@@ -53,7 +55,7 @@
 </template>
 
 <script>
-import { validUsername } from '@/utils/validate'
+import {validUsername} from '@/utils/validate'
 
 export default {
   name: 'Login',
@@ -148,16 +150,16 @@ $cursor: #fff;
 
     input {
       background: transparent;
-      border: 0px;
+      border: 0;
       -webkit-appearance: none;
-      border-radius: 0px;
+      border-radius: 0;
       padding: 12px 5px 12px 15px;
       color: $light_gray;
       height: 47px;
       caret-color: $cursor;
 
       &:-webkit-autofill {
-        box-shadow: 0 0 0px 1000px $bg inset !important;
+        box-shadow: 0 0 0 1000px $bg inset !important;
         -webkit-text-fill-color: $cursor !important;
       }
     }
@@ -185,11 +187,13 @@ $light_gray:#eee;
 
   .login-form {
     position: relative;
-    width: 520px;
+    width: 420px;
     max-width: 100%;
-    padding: 160px 35px 0;
-    margin: 0 auto;
+    padding: 40px 35px 0;
+    margin: 140px auto;
     overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #fff;
   }
 
   .tips {
@@ -218,7 +222,7 @@ $light_gray:#eee;
     .title {
       font-size: 26px;
       color: $light_gray;
-      margin: 0px auto 40px auto;
+      margin: 0 auto 40px auto;
       text-align: center;
       font-weight: bold;
     }
